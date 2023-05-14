@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'koneksi.php';
 
 
@@ -68,7 +69,7 @@ include 'koneksi.php';
               <td>'.$created.'</td>  
               <td>'.$updated.'</td>
               <td><div class="d-grid gap-2 d-md-block">
-              <button class="btn btn-warning" type="button" >Edit</button>
+              <button class="btn btn-warning" type="button" ><a href="edit.php?updateid='.$id.'">Edit</a></button>
               <button class="btn btn-danger" type="button" ><a href="delete.php?deleteid='.$id.'">Delete</a></button>
               </div> </td>
               </tr>'
@@ -76,6 +77,14 @@ include 'koneksi.php';
               ?>
 <?php
         }
+
+        if(!isset($_SESSION['session_email'])){
+          header("location:login.php");
+          exit();
+      }
+print_r($_SESSION);
+print_r($_COOKIE);
+
 
 ?>
                 

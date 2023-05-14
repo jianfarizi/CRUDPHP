@@ -19,7 +19,9 @@ if ( isset($_POST['submit'] ) ) {
 
 
  if ($result) {
-    echo "data sukses";
+    // echo "data sukses";
+
+    header("location:index.php");
  }else{
     die(mysqli_error($koneksi));
  }
